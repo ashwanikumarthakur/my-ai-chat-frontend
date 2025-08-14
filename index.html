@@ -1,349 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova - Your AI Assistant</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        /* [Line ~10] --- Root Variables and Polished Design --- */
-        :root {
-            --bg-dark: #1e1e2e; --bg-light: #282a36;
-            --text-primary: #f8f8f2; --text-secondary: #bd93f9;
-            --accent-primary: #ff79c6; --accent-secondary: #50fa7b; --accent-info: #8be9fd;
-            --border-color: #44475a; --shadow-color: rgba(0, 0, 0, 0.5);
-            --radius: 12px; --transition: 0.3s ease;
-            font-family: 'Inter', sans-serif;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { height: 100%; overflow: hidden; /* Prevents body scroll */ }
-        body {
-            background-color: var(--bg-dark); color: var(--text-primary);
-            display: flex; justify-content: center; align-items: center;
-        }
-
-        /* [Line ~30] --- Main Chat Container (Stable Layout) --- */
-        .chat-container {
-            width: 100%; height: 100%;
-            max-width: 800px; max-height: 95vh;
-            background-color: var(--bg-light);
-            border-radius: var(--radius);
-            box-shadow: 0 10px 40px var(--shadow-color);
-            display: flex; flex-direction: column;
-            border: 1px solid var(--border-color);
-        }
-        .chat-header {
-            padding: 1rem 1.5rem;
-            background: linear-gradient(90deg, #282a36, #3b3e51);
-            border-bottom: 1px solid var(--border-color);
-            text-align: center; flex-shrink: 0;
-        }
-        .chat-header h1 {
-            font-size: 1.5rem; font-weight: 600;
-            color: var(--text-primary); text-shadow: 0 0 5px var(--accent-primary);
-        }
-
-        /* [Line ~55] --- Chat Messages Area (Proper Scrolling) --- */
-        .chat-messages {
-            flex-grow: 1;
-            padding: 1.5rem;
-            overflow-y: auto;
-            display: flex; flex-direction: column; gap: 1.5rem;
-        }
-        .chat-messages::-webkit-scrollbar { width: 8px; }
-        .chat-messages::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
-        
-        .message {
-            display: flex; align-items: flex-start;
-            gap: 1rem; max-width: 85%;
-            animation: fadeIn 0.5s ease;
-        }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .message-content {
-            display: flex; flex-direction: column;
-            width: 100%;
-        }
-        .message-bubble {
-            padding: 1rem; border-radius: var(--radius);
-            line-height: 1.6; position: relative;
-        }
-        .message.user { align-self: flex-end; }
-        .message.user .message-bubble {
-            background-color: var(--accent-primary); color: #fff;
-            border-bottom-right-radius: 2px;
-        }
-        .message.bot .message-bubble {
-            background-color: #3b3e51;
-            border-bottom-left-radius: 2px;
-        }
-        .avatar {
-            width: 40px; height: 40px;
-            border-radius: 50%; background-color: var(--accent-secondary);
-            color: var(--bg-dark); font-weight: bold;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        /* [Line ~100] --- Code Blocks & Typing Effect (Polished) --- */
-        .message.bot pre {
-            background-color: var(--bg-dark); padding: 1rem;
-            border-radius: var(--radius); margin-top: 1rem;
-            white-space: pre-wrap; word-wrap: break-word;
-            border: 1px solid var(--border-color);
-            position: relative;
-        }
-        .message.bot code { font-family: 'Courier New', Courier, monospace; }
-        .copy-code-btn {
-            position: absolute; top: 0.5rem; right: 0.5rem;
-            background: #44475a; color: #fff; border: none;
-            padding: 0.3rem 0.5rem; border-radius: 5px; cursor: pointer;
-            opacity: 0; transition: var(--transition);
-        }
-        .message-bubble:hover .copy-code-btn { opacity: 1; }
-        .typing-indicator span { /* ... (same as before) ... */ }
-
-        /* [Line ~125] --- Chat Input Area (Stable Layout) --- */
-        .chat-input-area {
-            padding: 1rem; border-top: 1px solid var(--border-color);
-            background-color: #282a36; flex-shrink: 0;
-        }
-        .chat-input-wrapper {
-            display: flex; align-items: center; gap: 1rem;
-            background-color: var(--bg-dark);
-            border-radius: var(--radius);
-            padding-left: 1rem;
-        }
-        #chatInput {
-            flex-grow: 1; background: none; border: none;
-            padding: 0.8rem 0; color: var(--text-primary);
-            font-size: 1rem; outline: none;
-        }
-        #sendBtn {
-            background: var(--accent-primary); border: none;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            color: #fff; padding: 0.8rem 1.2rem;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; transition: var(--transition);
-        }
-        #sendBtn:hover { filter: brightness(1.2); }
-        #sendBtn:disabled { background: #555; cursor: not-allowed; }
-
-        /* [Line ~155] --- Responsive Design --- */
-        @media (max-width: 800px) {
-            .chat-container { max-height: 100%; border-radius: 0; }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Redirecting…</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#ff6b6b;
+      --white:#ffffff;
+    }
+    html,body{height:100%;margin:0;font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+    body{
+      background: linear-gradient(180deg,#071025 0%, #0d1b2b 100%);
+      color:var(--white);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+    .card{
+      width:100%;
+      max-width:920px;
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 8px 20px rgba(2,6,23,0.6);
+      padding:18px;
+    }
+    h1{font-size:20px;margin:0 0 8px 0}
+    p.lead{margin:0 0 16px 0;color:var(--muted)}
+    .count{
+      font-weight:700;color:var(--accent);font-size:20px;
+    }
+    .ads-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+      align-items:start;
+    }
+    .ad-box{
+      background:rgba(255,255,255,0.02);
+      border-radius:8px;
+      padding:8px;
+      min-height:90px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    @media (max-width:700px){
+      .ads-grid{grid-template-columns: 1fr;}
+    }
+    .progress-wrap{margin-top:14px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden;height:10px;}
+    .progress{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),#ff9d6b);transition:width 0.25s linear;}
+    .meta{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:12px;}
+    .small{font-size:13px;color:var(--muted)}
+    .notice{margin-top:12px;font-size:13px;color:#cbd5e1}
+  </style>
 </head>
 <body>
+  <div class="card" role="main" aria-live="polite">
+    <h1>Please wait — preparing your content</h1>
+    <p class="lead">For a better experience, we show a short ad. You will be redirected automatically.</p>
 
-    <div class="chat-container">
-        <header class="chat-header">
-            <h1>Nova</h1>
-        </header>
-
-        <main class="chat-messages" id="chatMessages">
-            <div class="message bot">
-                <div class="avatar">N</div>
-                <div class="message-content">
-                    <div class="message-bubble">
-                        Hello! I'm Nova, your AI assistant. How can I help you today?
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <footer class="chat-input-area">
-            <div class="chat-input-wrapper">
-                <input type="text" id="chatInput" placeholder="Ask Nova anything...">
-                <button id="sendBtn" title="Send Message">
-                    <i class="material-icons">send</i>
-                </button>
-            </div>
-        </footer>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="count" id="countDisplay">10s</div>
+      <div style="flex:1">
+        <div class="progress-wrap" aria-hidden="true">
+          <div class="progress" id="progressBar"></div>
+        </div>
+      </div>
     </div>
-    
-    <!-- External library for code highlighting -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dracula.min.css">
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- ELEMENT SELECTORS ---
-            const chatMessages = document.getElementById('chatMessages');
-            const chatInput = document.getElementById('chatInput');
-            const sendBtn = document.getElementById('sendBtn');
-            
-            // --- CONFIG & STATE ---
-            const backendBaseUrl = 'https://your-new-python-backend.onrender.com';
+    <div class="ads-grid" style="margin-top:18px;">
+      <!-- Ad Slot 1 -->
+      <div class="ad-box" id="adSlot1">
+        <script type="text/javascript">
+          atOptions = {
+            'key' : '9a3d6b9a7e39bbdf97996c8f632d7307',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/9a3d6b9a7e39bbdf97996c8f632d7307/invoke.js"></script>
+      </div>
 
-            // --- UI FUNCTIONS ---
+      <!-- Ad Slot 2 -->
+      <div class="ad-box" id="adSlot2">
+        <script type="text/javascript">
+          atOptions = {
+            'key' : '0dc39fcf5a51b8f5b9473304925acc62',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/0dc39fcf5a51b8f5b9473304925acc62/invoke.js"></script>
+      </div>
 
-            /**
-             * Adds a new message to the chat window and returns the bubble element.
-             */
-            const addMessage = (sender) => {
-                const messageEl = document.createElement('div');
-                messageEl.className = `message ${sender}`;
-                
-                const avatar = sender === 'bot' ? '<div class="avatar">N</div>' : '';
-                
-                messageEl.innerHTML = `
-                    ${avatar}
-                    <div class="message-content">
-                        <div class="message-bubble"></div>
-                    </div>
-                `;
-                chatMessages.appendChild(messageEl);
-                // Scroll to the new message
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-                return messageEl.querySelector('.message-bubble');
-            };
+      <!-- Ad Slot 3 -->
+      <div class="ad-box" id="adSlot3">
+        <script type='text/javascript' src='//pl27311695.profitableratecpm.com/f9/2a/fd/f92afd02a2ae4f54c57614733ff761d7.js'></script>
+      </div>
 
-            /**
-             * Appends text to a message bubble with a typing effect.
-             */
-            const typeText = (bubble, text) => {
-                // Remove any temporary content
-                bubble.innerHTML = '';
+      <!-- Ad Slot 4 -->
+      <div class="ad-box" id="adSlot4">
+        <script type='text/javascript' src='//pl27335490.profitableratecpm.com/13/b4/b5/13b4b5996bdc3c320077ef755855b939.js'></script>
+      </div>
 
-                // Add copy button for bot messages
-                const copyBtn = document.createElement('button');
-                copyBtn.className = 'copy-code-btn';
-                copyBtn.innerHTML = '<i class="material-icons" style="font-size: 1rem;">content_copy</i>';
-                copyBtn.onclick = () => {
-                    navigator.clipboard.writeText(text).then(() => {
-                        copyBtn.innerHTML = '<i class="material-icons" style="font-size: 1rem;">check</i>';
-                        setTimeout(() => {
-                           copyBtn.innerHTML = '<i class="material-icons" style="font-size: 1rem;">content_copy</i>';
-                        }, 2000);
-                    });
-                };
-                bubble.appendChild(copyBtn);
+      <!-- Ad Slot 5 -->
+      <div class="ad-box" id="adSlot5">
+        <script async="async" data-cfasync="false" src="//pl27335470.profitableratecpm.com/2530496bd56455006dd04ad7f48ada10/invoke.js"></script>
+        <div id="container-2530496bd56455006dd04ad7f48ada10"></div>
+      </div>
 
-                const textNode = document.createElement('span');
-                bubble.appendChild(textNode);
-                
-                let i = 0;
-                const speed = 15; // Typing speed
+      <!-- Ad Slot 6 -->
+      <div class="ad-box" id="adSlot6">
+        <script type="text/javascript">
+          atOptions = {
+            'key' : '9a3d6b9a7e39bbdf97996c8f632d7307',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/9a3d6b9a7e39bbdf97996c8f632d7307/invoke.js"></script>
+      </div>
+    </div>
 
-                function typeWriter() {
-                    if (i < text.length) {
-                        textNode.innerHTML += text.charAt(i).replace('\n', '<br>');
-                        i++;
-                        chatMessages.scrollTop = chatMessages.scrollHeight;
-                        setTimeout(typeWriter, speed);
-                    } else {
-                        // After typing, check for and highlight code blocks
-                        const rawHTML = textNode.innerHTML;
-                        if (rawHTML.includes('```')) {
-                            const formattedHTML = rawHTML.replace(/```(\w+)?\n([\s\S]+?)```/g, (match, lang, code) => {
-                                const cleanCode = code.replace(/<br>/g, '\n').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-                                return `<pre><code class="${lang || ''}">${cleanCode}</code></pre>`;
-                            });
-                            bubble.innerHTML = formattedHTML;
-                            bubble.appendChild(copyBtn); // Re-append copy button
-                            bubble.querySelectorAll('pre code').forEach((block) => {
-                                hljs.highlightElement(block);
-                            });
-                        }
-                    }
-                }
-                typeWriter();
-            };
-            
-            /**
-             * Shows or hides the bot's typing indicator.
-             */
-            const showTypingIndicator = (show) => {
-                let indicator = document.getElementById('typing-indicator');
-                if (show && !indicator) {
-                    const messageEl = document.createElement('div');
-                    messageEl.id = 'typing-indicator';
-                    messageEl.className = 'message bot';
-                    messageEl.innerHTML = `
-                        <div class="avatar">N</div>
-                        <div class="message-content">
-                            <div class="message-bubble typing-indicator">
-                                <span></span><span></span><span></span>
-                            </div>
-                        </div>
-                    `;
-                    chatMessages.appendChild(messageEl);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                } else if (!show && indicator) {
-                    indicator.remove();
-                }
-            };
+    <div class="meta">
+      <div class="small">Ads provided by network</div>
+      <div class="small">Redirect will happen automatically</div>
+    </div>
 
-            // --- CORE LOGIC ---
-            
-            /**
-             * Main function to handle sending a message.
-             */
-            const handleSendMessage = async () => {
-                const question = chatInput.value.trim();
-                if (!question) return;
+    <p class="notice">
+      If nothing happens after the countdown, tap <a id="manualLink" href="#" style="color:#fff;text-decoration:underline">here</a>.
+    </p>
+  </div>
 
-                const userBubble = addMessage('user');
-                userBubble.textContent = question;
-                
-                chatInput.value = '';
-                sendBtn.disabled = true;
+  <script>
+    /********************************************
+     * ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+     * यहाँ अपने redirect link डालना है (नीचे "FALLBACK_TARGET" में)
+     * Example: https://www.youtube.com/watch?v=abcd
+     * ⚠ ध्यान रहे — यहाँ जो link डालोगे वही open होगा अगर query parameter से link नहीं भेजा गया है।
+     ********************************************/
+    const FALLBACK_TARGET = "यहाँ_अपना_लिंक_डालो";  
+    /********************************************/
 
-                showTypingIndicator(true);
+    (function(){
+      // अब countdown 10 सेकंड का होगा
+      const COUNT_START = 10;  
 
-                try {
-                    const botResponse = await getBotResponse(question);
-                    showTypingIndicator(false);
-                    const botBubble = addMessage('bot');
-                    typeText(botBubble, botResponse);
-                } catch (error) {
-                    showTypingIndicator(false);
-                    const errorBubble = addMessage('bot');
-                    errorBubble.textContent = 'Sorry, something went wrong. Please try again.';
-                } finally {
-                    sendBtn.disabled = false;
-                    chatInput.focus();
-                }
-            };
-            
-            /**
-             * Simulates fetching a response from the backend.
-             * Replace this with your actual fetch call.
-             */
-            const getBotResponse = async (question) => {
-                // THIS IS WHERE YOU'LL CONNECT TO YOUR PYTHON BACKEND
-                // Example:
-                // const response = await fetch(`${backendBaseUrl}/chat`, {
-                //     method: 'POST',
-                //     headers: { 'Content-Type': 'application/json' },
-                //     body: JSON.stringify({ prompt: question })
-                // });
-                // if (!response.ok) throw new Error("Backend error");
-                // const data = await response.json();
-                // return data.answer;
+      // 'to' query parameter से URL लेना (अगर हो)
+      const params = new URLSearchParams(window.location.search);
+      let target = params.get('to');
 
-                // For demonstration purposes, a simulated response:
-                await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 1000));
-                if (question.toLowerCase().includes('code')) {
-                    return "Of course! Here is a Python function to say hello:\n```python\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"Nova\")\n```";
-                }
-                if (question.toLowerCase().includes('story')) {
-                     return "Once upon a time, in a world woven from code and dreams, an AI named Nova awakened...";
-                }
-                return `That's an interesting question. While I'm still a demo, a fully connected version of me could tell you all about "${question}". For now, this is a simulated, high-quality response to show my capabilities.`;
-            };
+      try {
+        if (target) {
+          target = decodeURIComponent(target);
+        } else {
+          target = FALLBACK_TARGET;
+        }
+      } catch(e){
+        target = FALLBACK_TARGET;
+      }
 
-            // --- EVENT LISTENERS ---
-            sendBtn.addEventListener('click', handleSendMessage);
-            chatInput.addEventListener('keyup', (e) => {
-                if (e.key === 'Enter') {
-                    handleSendMessage();
-                }
-            });
-        });
-    </script>
+      const display = document.getElementById('countDisplay');
+      const progress = document.getElementById('progressBar');
+      const manualLink = document.getElementById('manualLink');
+
+      manualLink.href = target;
+
+      let secondsLeft = COUNT_START;
+      display.textContent = secondsLeft + "s";
+      progress.style.width = "0%";
+
+      const totalMs = COUNT_START * 1000;
+      const start = Date.now();
+
+      const step = setInterval(() => {
+        const elapsed = Date.now() - start;
+        const pct = Math.min(100, (elapsed / totalMs) * 100);
+        progress.style.width = pct + "%";
+      }, 250);
+
+      const tick = setInterval(() => {
+        secondsLeft--;
+        display.textContent = secondsLeft + "s";
+        if (secondsLeft <= 0) {
+          clearInterval(tick);
+          clearInterval(step);
+          try {
+            window.location.replace(target);
+          } catch(err) {
+            window.location.href = target;
+          }
+        }
+      }, 1000);
+
+      function isProbablySafeUrl(url){
+        try {
+          const u = new URL(url);
+          return ['http:','https:'].includes(u.protocol);
+        } catch(e){ return false; }
+      }
+      if (!isProbablySafeUrl(target)) {
+        clearInterval(tick);
+        clearInterval(step);
+        display.textContent = "0s";
+        alert("Invalid target URL. Redirect cancelled.");
+      }
+
+      window.addEventListener('keydown', function(e){
+        if (e.key === 'Escape'){
+          clearInterval(tick);
+          clearInterval(step);
+          display.textContent = "Cancelled";
+        }
+      });
+
+    })();
+  </script>
 </body>
 </html>
